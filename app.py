@@ -54,7 +54,7 @@ def object_detection_image():
         #f = open(r'C:\Users\Olazaah\Downloads\stream\labels\coconames.txt','r')
         #lines = f.readlines()
         #classNames = [line.strip() for line in lines]
-        BASE_PATH = os.getcwd()
+        BASE_PATH = os.path.dirname(os.path.abspath(__file__))
         config_path = os.path.sep.join([BASE_PATH, "yolov4-obj-test.cfg"])
         weights_path = os.path.sep.join([BASE_PATH, "custom.weights"])
         net = cv2.dnn.readNetFromDarknet(config_path, weights_path)
