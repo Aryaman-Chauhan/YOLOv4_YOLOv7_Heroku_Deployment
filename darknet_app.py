@@ -55,8 +55,9 @@ def object_detection_image():
         #lines = f.readlines()
         #classNames = [line.strip() for line in lines]
         BASE_PATH = os.path.dirname(os.path.abspath(__file__))
-        weights_path = os.path.sep.join([BASE_PATH, "epoch_1724.onnx"])
-        net = cv2.dnn.readNetFromONNX(weights_path)
+        config_path = os.path.sep.join([BASE_PATH, "yolov4-obj-test.cfg"])
+        weights_path = os.path.sep.join([BASE_PATH, "custom.weights"])
+        net = cv2.dnn.readNetFromDarknet(config_path, weights_path)
         net.setPreferableBackend(cv2.dnn.DNN_BACKEND_OPENCV)
         net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
 
