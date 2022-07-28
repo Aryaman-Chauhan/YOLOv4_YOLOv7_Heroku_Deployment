@@ -1,2 +1,5 @@
 check.py
 runyolo.py
+checkv7.py
+*.slugignore
+/Deploy/
