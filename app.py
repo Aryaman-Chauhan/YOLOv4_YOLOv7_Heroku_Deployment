@@ -120,7 +120,7 @@ def object_detection_image():
 			score = round(float(score),3)
 			name = classNames[cls_id]
 			color = colors[name]
-			name += ' '+str(score * 100)
+			name += ' '+str(score * 100)[:4]
 			cv2.rectangle(image,box[:2],box[2:],color,2)
 			cv2.putText(image,name,(box[0], box[1] - 2),cv2.FONT_HERSHEY_SIMPLEX,0.75,[0, 0, 255],thickness=4)
 	
